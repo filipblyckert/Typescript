@@ -4,4 +4,11 @@ export interface ProductItem{
     category: string
     price: number
     imageName: string
+    
 }
+
+export interface ProductItemType{
+    all:any
+    featuredProducts: any
+}
+

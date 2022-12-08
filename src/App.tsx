@@ -6,33 +6,15 @@ import NotFoundView from './views/NotFoundView';
 import ProductDetailsView from './views/ProductsDetailView';
 import ProductsView from './views/ProductsView';
 import { ProductContext } from './contexts/contexts'
-import { useEffect, useState } from 'react';
-
+import { ProductItem } from './models/ProductsModel';
 
 
 
 function App() {
 
-  const[ products, setProducts] = useState({
-    all: [],
-    featuredProducts: []
+
   
-   })
-   
-   const fetchProducts = async () => {
-    let response = await fetch('https://win22-webapi.azurewebsites.net/api/products')
-    const json = await response.json();
-  
-    return {response, json};
-  };
-  
-    useEffect(() => {
-      fetchProducts().then(
-        data => setProducts( {...data.response, all: data.json} )
-      )
-    }, [])
-  
-}
+
 
 
   return (

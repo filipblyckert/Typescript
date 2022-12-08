@@ -10,12 +10,13 @@ import GreyboxSection from '../sections/GreyboxSection'
 
 
 
+
 const HomeView: React.FC = () => {
   const productContext = useContext(ProductContext)
   // window.top.document.title ='Fixxo.'
 
   function getSubsetOfProducts(start: number, end: number) {
-    return productContext.all.slice(start, end);
+    return productContext?.all?.slice(start, end);
   }
 
   return (
@@ -25,8 +26,7 @@ const HomeView: React.FC = () => {
         <ProductGridSection title= "Featured Products" items={getSubsetOfProducts(0, 8)}/> 
         <MiddleSection/>
         <GreyboxSection/>
-        <ProductGridSection title= "" items={getSubsetOfProducts(8, productContext.all.length)}/> 
-
+        <ProductGridSection title= "" items={getSubsetOfProducts(8, productContext?.all.length)}/> 
         <BottomLinksSection/>
         <FooterSection/>
     </>
